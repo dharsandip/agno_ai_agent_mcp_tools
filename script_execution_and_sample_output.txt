@@ -1,0 +1,880 @@
+(base) PS C:\Sandip\MCP> python .\agno_ai_agent_mcp_tools1.py
+Query: Please show me some good budget Hotels in New York on 24th and 25th May, 2025
+DEBUG ************************** Agent ID: 233ed10c-647a-4fdd-98b3-378d6d6e0fcb **************************
+DEBUG ************************* Session ID: 0f49a8f5-16f3-4fed-813a-6bf7c6a32901 *************************
+DEBUG ******************* Async Agent Run Start: d7f5ef22-d5a5-44a7-bff2-cabd71976212 ********************
+DEBUG Processing tools for model
+DEBUG Added tool airbnb_search from MCPTools
+DEBUG Added tool airbnb_listing_details from MCPTools
+DEBUG --------------------------------- Groq Async Response Stream Start ---------------------------------
+DEBUG ------------------------- Model: meta-llama/llama-4-scout-17b-16e-instruct -------------------------
+DEBUG ============================================== system ==============================================
+DEBUG <additional_information>
+      - Use markdown to format your answers.
+      </additional_information>
+DEBUG =============================================== user ===============================================
+DEBUG Please use the provided tools and answer the query and also show the exact Tools used: Please show me some good
+      budget Hotels in New York on 24th and 25th May, 2025
+DEBUG ============================================ assistant =============================================
+DEBUG To find budget hotels in New York for May 24th and 25th, 2025, we can use the Airbnb search function. Since we are
+      looking for budget hotels and the Airbnb search function primarily deals with Airbnb listings, we will have to
+      adapt our search to find relevant results.
+
+      First, let's search for budget-friendly Airbnb listings in New York for the specified dates.
+
+
+DEBUG Tool Calls:
+        - ID: 'call_57pa'
+          Name: 'airbnb_search'
+          Arguments: 'location: New York, checkin: 2025-05-24, checkout: 2025-05-25, maxPrice: 200'
+DEBUG ********************************************  METRICS  *********************************************
+DEBUG * Tokens:                      input=631, output=374, total=1005
+DEBUG * Time:                        2.9565s
+DEBUG * Tokens per second:           126.5020 tokens/s
+DEBUG * Time to first token:         2.1788s
+DEBUG * Additional metrics:          {'completion_time': 0.782565574, 'prompt_time': 0.018239524, 'queue_time':
+      0.232937783, 'total_time': 0.800805098}
+DEBUG ********************************************  METRICS  *********************************************
+DEBUG Getting function airbnb_search
+DEBUG Running: airbnb_search(location=New York, checkin=2025-05-24, checkout=2025-05-25, maxPrice=200)
+DEBUG Calling MCP Tool 'airbnb_search' with args: {'location': 'New York', 'checkin': '2025-05-24', 'checkout':
+      '2025-05-25', 'maxPrice': 200}
+DEBUG =============================================== tool ===============================================
+DEBUG Tool call Id: call_57pa
+DEBUG {
+        "searchUrl":
+      "https://www.airbnb.com/s/New%20York/homes?checkin=2025-05-24&checkout=2025-05-25&adults=1&children=0&infants=0&pe
+      ts=0&price_max=200",
+        "searchResults": [
+          {
+            "id": "1290526529867690092",
+            "url": "https://www.airbnb.com/rooms/1290526529867690092",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTI5MDUyNjUyOTg2NzY5MDA5Mg==",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "Chelsea Studio 4 (Shared Bathroom)"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.7499,
+                  "longitude": -73.9972
+                }
+              }
+            },
+            "badges": "",
+            "structuredContent": {
+              "mapCategoryInfo": "",
+              "mapSecondaryLine": "",
+              "primaryLine": "1 single bed",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "4.56 out of 5 average rating,  18 reviews",
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$170 for 1 night, originally $187"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$170 x 1 night: $170, "
+              }
+            }
+          },
+          {
+            "id": "883112096841319366",
+            "url": "https://www.airbnb.com/rooms/883112096841319366",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6ODgzMTEyMDk2ODQxMzE5MzY2",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "Sunny Bedroom with Full Bath NYC (one guest only)"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.785156478894535,
+                  "longitude": -73.80866526495196
+                }
+              }
+            },
+            "badges": "Guest favorite",
+            "structuredContent": {
+              "mapCategoryInfo": "Stay with Michelle",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "5.0 out of 5 average rating,  46 reviews",
+            "listingParamOverrides": {
+              "categoryTag": "Tag:8678",
+              "photoId": "2071380285",
+              "relaxedAmenityIds": "",
+              "splitStaysLocationPrecisions": "",
+              "splitStaysLocationsAcpIds": ""
+            },
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$97 for 1 night"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$97 x 1 night: $97"
+              }
+            }
+          },
+          {
+            "id": "1015357234838303151",
+            "url": "https://www.airbnb.com/rooms/1015357234838303151",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTAxNTM1NzIzNDgzODMwMzE1MQ==",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "Napping: M Train L Train TV WiFi AC Williamsburg"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.69798,
+                  "longitude": -73.92465
+                }
+              }
+            },
+            "badges": "",
+            "structuredContent": {
+              "mapCategoryInfo": "Stay with Roderick",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "4.63 out of 5 average rating,  67 reviews",
+            "listingParamOverrides": {
+              "categoryTag": "Tag:8678",
+              "photoId": "2163268861",
+              "relaxedAmenityIds": "",
+              "splitStaysLocationPrecisions": "",
+              "splitStaysLocationsAcpIds": ""
+            },
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$136 for 1 night, originally $149"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$136 x 1 night: $136, "
+              }
+            }
+          },
+          {
+            "id": "1034100855619075023",
+            "url": "https://www.airbnb.com/rooms/1034100855619075023",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTAzNDEwMDg1NTYxOTA3NTAyMw==",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "Sunny: Spacious M & L WiFi Netflix Williamsburg"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.69753,
+                  "longitude": -73.92241
+                }
+              }
+            },
+            "badges": "",
+            "structuredContent": {
+              "mapCategoryInfo": "Stay with Alice, Host",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "4.64 out of 5 average rating,  76 reviews",
+            "listingParamOverrides": {
+              "categoryTag": "Tag:8678",
+              "photoId": "2157401378",
+              "relaxedAmenityIds": "",
+              "splitStaysLocationPrecisions": "",
+              "splitStaysLocationsAcpIds": ""
+            },
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$164 for 1 night, originally $181"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$164 x 1 night: $164, "
+              }
+            }
+          },
+          {
+            "id": "1250415588517175726",
+            "url": "https://www.airbnb.com/rooms/1250415588517175726",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTI1MDQxNTU4ODUxNzE3NTcyNg==",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "Solo: M Train L Train Wi-Fi AC Netflix Williamsburg"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.69954,
+                  "longitude": -73.92378
+                }
+              }
+            },
+            "badges": "",
+            "structuredContent": {
+              "mapCategoryInfo": "Stay with Kana",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "4.73 out of 5 average rating,  37 reviews",
+            "listingParamOverrides": {
+              "categoryTag": "Tag:8678",
+              "photoId": "2158860973",
+              "relaxedAmenityIds": "",
+              "splitStaysLocationPrecisions": "",
+              "splitStaysLocationsAcpIds": ""
+            },
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$152 for 1 night"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$152 x 1 night: $152"
+              }
+            }
+          },
+          {
+            "id": "52618390",
+            "url": "https://www.airbnb.com/rooms/52618390",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6NTI2MTgzOTA=",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "BotanicStays - PVT Bath' & Room A/C/J Trains + JFK"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.67965,
+                  "longitude": -73.87258
+                }
+              }
+            },
+            "badges": "Guest favorite",
+            "structuredContent": {
+              "mapCategoryInfo": "Stay with Kimberly, Finance",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "4.98 out of 5 average rating,  102 reviews",
+            "listingParamOverrides": {
+              "categoryTag": "Tag:8678",
+              "photoId": "1292451403",
+              "relaxedAmenityIds": "",
+              "splitStaysLocationPrecisions": "",
+              "splitStaysLocationsAcpIds": ""
+            },
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$183 for 1 night"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$183 x 1 night: $183"
+              }
+            }
+          },
+          {
+            "id": "1303884604226371796",
+            "url": "https://www.airbnb.com/rooms/1303884604226371796",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTMwMzg4NDYwNDIyNjM3MTc5Ng==",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "Spacious Room in Queens, NYC #2"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.69902992476908,
+                  "longitude": -73.83394155322276
+                }
+              }
+            },
+            "badges": "Guest favorite",
+            "structuredContent": {
+              "mapCategoryInfo": "Stay with John",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "5.0 out of 5 average rating,  6 reviews",
+            "listingParamOverrides": {
+              "categoryTag": "Tag:8678",
+              "photoId": "2055559992",
+              "relaxedAmenityIds": "",
+              "splitStaysLocationPrecisions": "",
+              "splitStaysLocationsAcpIds": ""
+            },
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$113 for 1 night"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$113 x 1 night: $113"
+              }
+            }
+          },
+          {
+            "id": "1091998427751796380",
+            "url": "https://www.airbnb.com/rooms/1091998427751796380",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTA5MTk5ODQyNzc1MTc5NjM4MA==",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "Private Room with King Size Bed"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.58409342361642,
+                  "longitude": -73.95818816242583
+                }
+              }
+            },
+            "badges": "Superhost",
+            "structuredContent": {
+              "mapCategoryInfo": "Stay with Irfan",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "4.71 out of 5 average rating,  76 reviews",
+            "listingParamOverrides": {
+              "categoryTag": "Tag:8678",
+              "photoId": "1841867450",
+              "relaxedAmenityIds": "",
+              "splitStaysLocationPrecisions": "",
+              "splitStaysLocationsAcpIds": ""
+            },
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$102 for 1 night"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$102 x 1 night: $102"
+              }
+            }
+          },
+          {
+            "id": "30771254",
+            "url": "https://www.airbnb.com/rooms/30771254",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6MzA3NzEyNTQ=",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "Prívate room 20min from Times Square NYC Manhattan"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.80024,
+                  "longitude": -74.00769
+                }
+              }
+            },
+            "badges": "",
+            "structuredContent": {
+              "mapCategoryInfo": "Stay with Jay, Masters student",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "4.6 out of 5 average rating,  321 reviews",
+            "listingParamOverrides": {
+              "categoryTag": "Tag:8678",
+              "photoId": "649071977",
+              "relaxedAmenityIds": "",
+              "splitStaysLocationPrecisions": "",
+              "splitStaysLocationsAcpIds": ""
+            },
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$100 for 1 night"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$100 x 1 night: $100"
+              }
+            }
+          },
+          {
+            "id": "980408563480059112",
+            "url": "https://www.airbnb.com/rooms/980408563480059112",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6OTgwNDA4NTYzNDgwMDU5MTEy",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "LGA Modest Private Room Near LaGuardia Airport"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.76746396340039,
+                  "longitude": -73.87724297826612
+                }
+              }
+            },
+            "badges": "Guest favorite",
+            "structuredContent": {
+              "mapCategoryInfo": "Stay with Angela",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "4.9 out of 5 average rating,  128 reviews",
+            "listingParamOverrides": {
+              "categoryTag": "Tag:8678",
+              "photoId": "1740004065",
+              "relaxedAmenityIds": "",
+              "splitStaysLocationPrecisions": "",
+              "splitStaysLocationsAcpIds": ""
+            },
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$147 for 1 night, originally $163"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$147 x 1 night: $147, "
+              }
+            }
+          },
+          {
+            "id": "577187306174934665",
+            "url": "https://www.airbnb.com/rooms/577187306174934665",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6NTc3MTg3MzA2MTc0OTM0NjY1",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "Modern bedroom (Spring)"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.75463,
+                  "longitude": -73.85824
+                }
+              }
+            },
+            "badges": "Superhost",
+            "structuredContent": {
+              "mapCategoryInfo": "Stay with Tian",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "4.7 out of 5 average rating,  161 reviews",
+            "listingParamOverrides": {
+              "categoryTag": "Tag:8678",
+              "photoId": "1660200263",
+              "relaxedAmenityIds": "",
+              "splitStaysLocationPrecisions": "",
+              "splitStaysLocationsAcpIds": ""
+            },
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$140 for 1 night"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$140 x 1 night: $140"
+              }
+            }
+          },
+          {
+            "id": "1021028161738164104",
+            "url": "https://www.airbnb.com/rooms/1021028161738164104",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTAyMTAyODE2MTczODE2NDEwNA==",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "New York private room (A)"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.80946,
+                  "longitude": -74.00935
+                }
+              }
+            },
+            "badges": "",
+            "structuredContent": {
+              "mapCategoryInfo": "Stay with Wilder",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "4.69 out of 5 average rating,  64 reviews",
+            "listingParamOverrides": {
+              "categoryTag": "Tag:8678",
+              "photoId": "1819351367",
+              "relaxedAmenityIds": "",
+              "splitStaysLocationPrecisions": "",
+              "splitStaysLocationsAcpIds": ""
+            },
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$100 for 1 night, originally $130"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$100 x 1 night: $100, "
+              }
+            }
+          },
+          {
+            "id": "29684573",
+            "url": "https://www.airbnb.com/rooms/29684573",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6Mjk2ODQ1NzM=",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "Sean Cozy Room In Brooklyn On A Dead End Block"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.649,
+                  "longitude": -73.9352
+                }
+              }
+            },
+            "badges": "Guest favorite",
+            "structuredContent": {
+              "mapCategoryInfo": "Stay with Sean, Hosting for 6 years",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "4.93 out of 5 average rating,  179 reviews",
+            "listingParamOverrides": {
+              "categoryTag": "Tag:8678",
+              "photoId": "1622065992",
+              "relaxedAmenityIds": "",
+              "splitStaysLocationPrecisions": "",
+              "splitStaysLocationsAcpIds": ""
+            },
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$154 for 1 night"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$154 x 1 night: $154"
+              }
+            }
+          },
+          {
+            "id": "1253626662608476503",
+            "url": "https://www.airbnb.com/rooms/1253626662608476503",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTI1MzYyNjY2MjYwODQ3NjUwMw==",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "Close to New York time square, shared room."
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.76897923276307,
+                  "longitude": -74.04032097513698
+                }
+              }
+            },
+            "badges": "Guest favorite",
+            "structuredContent": {
+              "mapCategoryInfo": "",
+              "mapSecondaryLine": "",
+              "primaryLine": "1 bed",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "4.93 out of 5 average rating,  14 reviews",
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$97 for 1 night"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$97 x 1 night: $97"
+              }
+            }
+          },
+          {
+            "id": "1010886192679452402",
+            "url": "https://www.airbnb.com/rooms/1010886192679452402",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6MTAxMDg4NjE5MjY3OTQ1MjQwMg==",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "HUGE bedroom with Fireplace in Astoria"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.77467,
+                  "longitude": -73.91877
+                }
+              }
+            },
+            "badges": "Superhost",
+            "structuredContent": {
+              "mapCategoryInfo": "Stay with Lucas And Natasha, Hosting for 6 years",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "4.81 out of 5 average rating,  101 reviews",
+            "listingParamOverrides": {
+              "categoryTag": "Tag:8678",
+              "photoId": "1769667132",
+              "relaxedAmenityIds": "",
+              "splitStaysLocationPrecisions": "",
+              "splitStaysLocationsAcpIds": ""
+            },
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$194 for 1 night"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$194 x 1 night: $194"
+              }
+            }
+          },
+          {
+            "id": "842156885038613277",
+            "url": "https://www.airbnb.com/rooms/842156885038613277",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6ODQyMTU2ODg1MDM4NjEzMjc3",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "Private Bedroom 1- Minutes from Newark Airport/NYC"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.6765,
+                  "longitude": -74.2043
+                }
+              }
+            },
+            "badges": "Guest favorite",
+            "structuredContent": {
+              "mapCategoryInfo": "Stay with Fabio",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "4.95 out of 5 average rating,  165 reviews",
+            "listingParamOverrides": {
+              "categoryTag": "Tag:8678",
+              "photoId": "1602205309",
+              "relaxedAmenityIds": "",
+              "splitStaysLocationPrecisions": "",
+              "splitStaysLocationsAcpIds": ""
+            },
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$114 for 1 night"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$114 x 1 night: $114"
+              }
+            }
+          },
+          {
+            "id": "767919812132267159",
+            "url": "https://www.airbnb.com/rooms/767919812132267159",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6NzY3OTE5ODEyMTMyMjY3MTU5",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "Cozy master-bedroom hosted by Amy"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.6168,
+                  "longitude": -74.0778
+                }
+              }
+            },
+            "badges": "Guest favorite",
+            "structuredContent": {
+              "mapCategoryInfo": "Free cancellation",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": "Free cancellation"
+            },
+            "avgRatingA11yLabel": "4.94 out of 5 average rating,  148 reviews",
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$154 for 1 night"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$154 x 1 night: $154"
+              }
+            }
+          },
+          {
+            "id": "53795503",
+            "url": "https://www.airbnb.com/rooms/53795503",
+            "demandStayListing": {
+              "id": "RGVtYW5kU3RheUxpc3Rpbmc6NTM3OTU1MDM=",
+              "description": {
+                "name": {
+                  "localizedStringWithTranslationPreference": "Room in Maspeth Queens NYC 2nd floor"
+                }
+              },
+              "location": {
+                "coordinate": {
+                  "latitude": 40.71599060603165,
+                  "longitude": -73.91242078578676
+                }
+              }
+            },
+            "badges": "",
+            "structuredContent": {
+              "mapCategoryInfo": "Stay with Dimitrios",
+              "mapSecondaryLine": "",
+              "primaryLine": "",
+              "secondaryLine": ""
+            },
+            "avgRatingA11yLabel": "4.56 out of 5 average rating,  63 reviews",
+            "listingParamOverrides": {
+              "categoryTag": "Tag:8678",
+              "photoId": "2080684008",
+              "relaxedAmenityIds": "",
+              "splitStaysLocationPrecisions": "",
+              "splitStaysLocationsAcpIds": ""
+            },
+            "structuredDisplayPrice": {
+              "primaryLine": {
+                "accessibilityLabel": "$176 for 1 night"
+              },
+              "explanationData": {
+                "title": "Price details",
+                "priceDetails": "$176 x 1 night: $176"
+              }
+            }
+          }
+        ],
+        "paginationInfo": {
+          "pageCursors": [
+            "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjowLCJ2ZXJzaW9uIjoxfQ==",
+            "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxOCwidmVyc2lvbiI6MX0=",
+            "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjozNiwidmVyc2lvbiI6MX0=",
+            "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0Ijo1NCwidmVyc2lvbiI6MX0=",
+            "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0Ijo3MiwidmVyc2lvbiI6MX0=",
+            "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0Ijo5MCwidmVyc2lvbiI6MX0=",
+            "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxMDgsInZlcnNpb24iOjF9",
+            "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxMjYsInZlcnNpb24iOjF9",
+            "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxNDQsInZlcnNpb24iOjF9",
+            "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxNjIsInZlcnNpb24iOjF9",
+            "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxODAsInZlcnNpb24iOjF9",
+            "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxOTgsInZlcnNpb24iOjF9",
+            "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoyMTYsInZlcnNpb24iOjF9",
+            "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoyMzQsInZlcnNpb24iOjF9",
+            "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoyNTIsInZlcnNpb24iOjF9"
+          ],
+          "nextPageCursor": "eyJzZWN0aW9uX29mZnNldCI6MCwiaXRlbXNfb2Zmc2V0IjoxOCwidmVyc2lvbiI6MX0="
+        }
+      }
+DEBUG ******************************************  TOOL METRICS  ******************************************
+DEBUG * Time:                        1.5735s
+DEBUG ******************************************  TOOL METRICS  ******************************************
+DEBUG ============================================ assistant =============================================
+DEBUG Here are some budget-friendly hotels in New York for May 24th and 25th, 2025:
+
+      1. **Chelsea Studio4 (Shared Bathroom)** - $170 for 1 night, originally $187
+              * Location: Chelsea, New York
+              * Rating: 4.56 out of 5
+      2. **Sunny Bedroom with Full Bath NYC (one guest only)** - $97 for 1 night
+              * Location: NYC
+              * Rating: 5.0 out of 5
+      3. **Napping: M Train L Train TV WiFi AC Williamsburg** - $136 for 1 night, originally $149
+              * Location: Williamsburg, Brooklyn
+              * Rating: 4.63 out of 5
+      4. **Sunny: Spacious M & L WiFi Netflix Williamsburg** - $164 for 1 night, originally $181
+              * Location: Williamsburg, Brooklyn
+              * Rating: 4.64 out of 5
+      5. **Solo: M Train L Train Wi-Fi AC Netflix Williamsburg** - $152 for 1 night
+              * Location: Williamsburg, Brooklyn
+              * Rating: 4.73 out of 5
+
+      You can find more options and details on Airbnb. Would you like more information on any of these options?
+DEBUG ********************************************  METRICS  *********************************************
+DEBUG * Tokens:                      input=6820, output=279, total=7099
+DEBUG * Time:                        3.5255s
+DEBUG * Tokens per second:           79.1380 tokens/s
+DEBUG * Time to first token:         1.9464s
+DEBUG * Additional metrics:          {'completion_time': 0.585376625, 'prompt_time': 0.220749247, 'queue_time':
+      0.25201417400000004, 'total_time': 0.806125872}
+DEBUG ********************************************  METRICS  *********************************************
+DEBUG ---------------------------------- Groq Async Response Stream End ----------------------------------
+DEBUG Added RunResponse to Memory
+DEBUG Logging Agent Run (Async)
+DEBUG *********************** Agent Run End: d7f5ef22-d5a5-44a7-bff2-cabd71976212 ************************
+┏━ Message ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                      ┃
+┃ Please use the provided tools and answer the query and also show the exact Tools used: Please show me some good      ┃
+┃ budget Hotels in New York on 24th and 25th May, 2025                                                                 ┃
+┃                                                                                                                      ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Tool Calls ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                      ┃
+┃ • airbnb_search(location=New York, checkin=2025-05-24, checkout=2025-05-25, maxPrice=200)                            ┃
+┃                                                                                                                      ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+┏━ Response (8.4s) ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                                                                                                                      ┃
+┃ To find budget hotels in New York for May 24th and 25th, 2025, we can use the Airbnb search function. Since we are   ┃
+┃ looking for budget hotels and the Airbnb search function primarily deals with Airbnb listings, we will have to adapt ┃
+┃ our search to find relevant results.                                                                                 ┃
+┃                                                                                                                      ┃
+┃ First, let's search for budget-friendly Airbnb listings in New York for the specified dates.                         ┃
+┃                                                                                                                      ┃
+┃ Here are some budget-friendly hotels in New York for May 24th and 25th, 2025:                                        ┃
+┃                                                                                                                      ┃
+┃  1 Chelsea Studio4 (Shared Bathroom) - $170 for 1 night, originally $187                                             ┃
+┃     • Location: Chelsea, New York                                                                                    ┃
+┃     • Rating: 4.56 out of 5                                                                                          ┃
+┃  2 Sunny Bedroom with Full Bath NYC (one guest only) - $97 for 1 night                                               ┃
+┃     • Location: NYC                                                                                                  ┃
+┃     • Rating: 5.0 out of 5                                                                                           ┃
+┃  3 Napping: M Train L Train TV WiFi AC Williamsburg - $136 for 1 night, originally $149                              ┃
+┃     • Location: Williamsburg, Brooklyn                                                                               ┃
+┃     • Rating: 4.63 out of 5                                                                                          ┃
+┃  4 Sunny: Spacious M & L WiFi Netflix Williamsburg - $164 for 1 night, originally $181                               ┃
+┃     • Location: Williamsburg, Brooklyn                                                                               ┃
+┃     • Rating: 4.64 out of 5                                                                                          ┃
+┃  5 Solo: M Train L Train Wi-Fi AC Netflix Williamsburg - $152 for 1 night                                            ┃
+┃     • Location: Williamsburg, Brooklyn                                                                               ┃
+┃     • Rating: 4.73 out of 5                                                                                          ┃
+┃                                                                                                                      ┃
+┃ You can find more options and details on Airbnb. Would you like more information on any of these options?            ┃
+┃                                                                                                                      ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
